@@ -1,22 +1,38 @@
 {
-  "name" : "snsubs-download-page",
-  "version" : "0.0.1",
-  "scripts" : {
-    "start" : "node Server.js"
+  "name": "snsubs-download-page",
+  "version": "0.0.2",
+  "scripts": {
+    "start": "node Server.js"
   },
-  "dependencies" : {
-    "express" : "latest",
-    "ejs" : "latest",
-    "mongoose" : "latest",
-    "passport" : "latest",         
-    "passport-local" : "latest",
-    "connect-flash" : "latest",     
-    "bcrypt-nodejs" : "latest",
-    
+  "dependencies": {
+    "express": "latest",
+    "ejs": "latest",
+    "mongoose": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "connect-flash": "latest",
+    "bcrypt-nodejs": "latest",
     "morgan": "latest",
     "body-parser": "latest",
     "cookie-parser": "latest",
     "method-override": "latest",
-    "express-session": "latest"   
-  }
+    "express-session": "latest"
+  },
+  "description": "A node-js download page for all fansub projects of shinigami-neko-subs.",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ley21/snsubs-download-page.git"
+  },
+  "keywords": [
+    "fansub",
+    "ddl"
+  ],
+  "author": "Ley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ley21/snsubs-download-page/issues"
+  },
+  "homepage": "https://github.com/Ley21/snsubs-download-page#readme"
 }
