@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+        <div id="mainBody" style="padding-top: 70px;padding-bottom: 70px;">
+            <div class="container text-center" id="contentBody">
+                <div class="panel-group" id="accordion">
+                </div>
+                <div class="jumbotron text-center">
+                    <h1><span class="fa fa-lock"></span> Node Authentication</h1>
+            
+                    <p>Login or Register with:</p>
+            
+                    <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
+                    <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+                </div>
+            </div>
+        </div>
+        <div id="modal"></div>
+        <footer>
+    <% include ../partials/footer %>
+</footer>
+    </body>
+</html>

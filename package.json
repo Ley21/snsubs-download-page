@@ -1,0 +1,22 @@
+{
+  "name" : "snsubs-download-page",
+  "version" : "0.0.1",
+  "scripts" : {
+    "start" : "node Server.js"
+  },
+  "dependencies" : {
+    "express" : "latest",
+    "ejs" : "latest",
+    "mongoose" : "latest",
+    "passport" : "latest",         
+    "passport-local" : "latest",
+    "connect-flash" : "latest",     
+    "bcrypt-nodejs" : "latest",
+    
+    "morgan": "latest",
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "method-override": "latest",
+    "express-session": "latest"   
+  }
+}
