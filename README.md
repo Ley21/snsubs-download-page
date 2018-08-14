@@ -13,13 +13,15 @@ $ npm i snsubs-download-page --save-dev
 ## Usage
 
 Define following environment variables to run the page.
+
+```sh
 db_address       => Address for mongodb
 db_user          => Username of mongodb user
 db_password      => Password for maongodb user
 
 default_email    => Default mail address for user
 default_password => Default password for user of the page
-
+```
 
 ## Running tests
 
