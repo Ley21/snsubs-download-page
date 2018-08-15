@@ -1,3 +1,5 @@
+var Project = require('../config/project');
+
 // app/routes.js
 module.exports = function(app, passport) {
 
@@ -5,7 +7,15 @@ module.exports = function(app, passport) {
     // HOME PAGE (with login links) ========
     // =====================================
     app.get('/', function(req, res) {
-        res.render('pages/index.ejs'); // load the index.ejs file
+        var Project = require('./models/project');
+        Project.find().exec(function(err,data){
+            var projects = data.map(d=>d.project);
+            res.render('pages/index.ejs', {
+                user: req.user,
+                projects: projects
+            }); // load the index.ejs file
+        });
+        
     });
 
     // =====================================
@@ -15,17 +25,17 @@ module.exports = function(app, passport) {
     app.get('/login', function(req, res) {
 
         // render the page and pass in any flash data if it exists
-        res.render('pages/login.ejs', { message: req.flash('loginMessage') }); 
+        res.render('pages/login.ejs', { message: req.flash('loginMessage') });
     });
 
     // process the login form
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/profile', // redirect to the secure profile section
-        failureRedirect : '/login', // redirect back to the signup page if there is an error
-        failureFlash : true // allow flash messages
+        successRedirect: '/', // redirect to the secure profile section
+        failureRedirect: '/login', // redirect back to the signup page if there is an error
+        failureFlash: true // allow flash messages
     }));
 
-    
+
     // =====================================
     // PROFILE SECTION =====================
     // =====================================
@@ -33,7 +43,26 @@ module.exports = function(app, passport) {
     // we will use route middleware to verify this (the isLoggedIn function)
     app.get('/profile', isLoggedIn, function(req, res) {
         res.render('pages/profile.ejs', {
-            user : req.user // get the user out of session and pass to template
+            user: req.user // get the user out of session and pass to template
+        });
+    });
+
+    app.get('/project', isLoggedIn, function(req, res) {
+        res.render('pages/project.ejs', {
+            user: req.user
+        });
+    });
+
+    // process the login form
+    app.post('/project', function(req, res) {
+        var newProject = new Project(req.body.name, req.body.banner, req.body.episode,
+            req.body.state, req.body.visibility, req.body.season);
+        res.redirect('/');
+    });
+
+    app.get('/episode', isLoggedIn, function(req, res) {
+        res.render('pages/episode.ejs', {
+            user: req.user
         });
     });
 
@@ -56,4 +85,3 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/');
 }
-
