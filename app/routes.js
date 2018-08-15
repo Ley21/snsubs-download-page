@@ -1,4 +1,4 @@
-var Project = require('../config/project');
+var projectController = require('./controller/projectController');
 
 // app/routes.js
 module.exports = function(app, passport) {
@@ -54,11 +54,7 @@ module.exports = function(app, passport) {
     });
 
     // process the login form
-    app.post('/project', function(req, res) {
-        var newProject = new Project(req.body.name, req.body.banner, req.body.episode,
-            req.body.state, req.body.visibility, req.body.season);
-        res.redirect('/');
-    });
+    app.post('/project',isLoggedIn, projectController.create_project);
 
     app.get('/episode', isLoggedIn, function(req, res) {
         res.render('pages/episode.ejs', {
