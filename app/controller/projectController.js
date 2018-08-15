@@ -1,4 +1,4 @@
-var Project = require('../app/models/project');
+var Project = require('../models/project');
 
 exports.project_create = function(req,res){
     Project.findOne({'project.name' : req.body.name},function(err,project){
@@ -34,3 +34,17 @@ exports.project_create = function(req,res){
         }
     }).exec();
 };
+
+exports.project_getAll = function(req,res){
+
+    Project.find().exec(function(err,data){
+        if (err)
+            return err;
+            
+        var projects = data.map(d=>d.project);
+        res.render('pages/index.ejs', {
+            isLoggedIn: req.isAuthenticated(),
+            projects: projects
+        }); // load the index.ejs file
+    });
+}
