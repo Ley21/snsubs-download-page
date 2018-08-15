@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+        <div id="mainBody" style="padding-top: 70px;padding-bottom: 70px;">
+            <form id="t_form" action="editEpisode.php">
+                <input id="Id" value="<?php echo $id; ?>" name="id" type="hidden">
+                <table>
+                	<tbody><tr>
+                	    <th>Project:</th><td colspan='3'><select class='form-control' name='project'>
+                	        
+                	    </select><td>
+            	    </tr>
+            	    <tr>
+                		<th>Nr:</th><td width="60px" ><input class="form-control" name="nr" placeholder="Nr" type="Text"></td>
+                		<th>Version:</th><td width="60px"><input class="form-control" name="version" placeholder="Version" type="Text"></td>
+                	</tr>
+                	<tr>
+                	    <th>Title:</th><td colspan=3><input class="form-control" name="title" placeholder="Title" value="" type="Text"></td>
+                	</tr>
+                	<tr>
+                		<th>Release Date:</th><td colspan=3><input class="form-control" name="release_date" placeholder="Date" value="" type="date"></td>
+                	</tr>
+                	</tbody></table>
+                	</br>
+                	<table>
+                	    
+                	</table>
+                </form>
+        </div>
+        <footer>
+    <% include ../partials/footer %>
+</footer>
+    </body>
+</html>

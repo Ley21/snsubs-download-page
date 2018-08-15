@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+        <div id="mainBody" style="padding-top: 70px;padding-bottom: 70px;">
+            <form action="/project" method="post">
+                <table>
+                	<tbody><tr>
+                		<th width="200px">Name:</th><td width="200px"><input class="form-control" name="name" id="anime" placeholder="Project Title" value="" type="Text"></td>
+                	</tr>
+                	<tr>
+                		<th>Season / Jahr:</th><td><input class="form-control" name="season" id="season" placeholder="Season Jahr" value="" type="Text"></td>
+                	</tr>
+                	<tr>
+                		<th>Episodenanzahl:</th><td><input class="form-control" name="count" id="episode" placeholder="Episodenanzal" value="" type="Text"></td>
+                	</tr>
+                	<tr>
+                		<th>Banner:</th><td><input class="form-control" name="bannerUrl" id="banner" placeholder="Bannergrafik Url" type="Text"></td>
+                		<td width="200px"></td>
+                	</tr>
+                	<tr>
+                		<th>Status:</th><td><select class="form-control" id="state" name="state">
+                		    <option value="laufend">laufend</option>
+                		    <option value="abgeschlossen">abgeschlossen</option>
+                		    <option value="lizensiert">lizensiert</option>
+                		    <option value="pausiert">pausiert</option>
+            		    </select></td>
+                	</tr>
+                	<tr>
+                		<th>Sichbarkeit:</th><td><select class="form-control" id="visibility" name="visibility">
+                		    <option value="0">verstecken</option>
+                		    <option value="1">anzeigen</option></select></td>
+                	</tr>
+                </tbody></table>
+                <button type="submit" class="btn btn-warning btn-lg">Speichern</button>
+                </form>
+        </div>
+        <footer>
+    <% include ../partials/footer %>
+</footer>
+    </body>
+</html>
