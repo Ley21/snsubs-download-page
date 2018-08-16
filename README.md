@@ -39,8 +39,7 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 
 **Ley**
 
-* [github/](https://github.com/)
-* [twitter/](http://twitter.com/)
+* [github/](https://github.com/Ley21)
 
 ## License
 
